@@ -116,9 +116,11 @@ processing.html
 Here we see how to interact with the controller object on the front end - which is the secret sauce for angular.  
 
 Notice how easy iteration is: 
-```<span ng-repeat="elem in processing.listing">
+```
+<span ng-repeat="elem in processing.listing">
     {{elem}},
-  </span>
+</span>
+
 ```
 Also, notice how easy changing values on the front end is:
 ```
