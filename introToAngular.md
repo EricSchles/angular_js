@@ -124,7 +124,9 @@ Notice how easy iteration is:
 ```
 Also, notice how easy changing values on the front end is:
 ```
-<p> Change First:<input type="number" ng-model="val"><button class="btn" ng-click="processing.setFirst(val)">change first</button>
+<p> Change First:<input type="number" ng-model="val">
+<button class="btn" ng-click="processing.setFirst(val)">change first</button>
+</p>
 ```
 
 Finally, notice how easy accessing values in the object is:
