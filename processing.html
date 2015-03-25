@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="processing" ng-controller="ProcessingController as processing"> 
+ <p> Adding {{processing.first}} + {{processing.second}}: {{processing.first + processing.second}}</p>
+ <p> Getting all the elements in listing:</p>
+  <span ng-repeat="elem in processing.listing">
+    {{elem}},
+  </span> 
+ <p> Change First:<input type="number" ng-model="val"><button class="btn" ng-click="processing.setFirst(val)">change first</button>
+ <p>Doing a lookup:</p>
+ <p>Name: {{processing.lookup["name"]}}</p>
+ <p>Age: {{processing.lookup["age"]}}</p>
+ <p>Company: {{processing.lookup["company"]}}</p>
+</div> 
+
+<script>
+angular.module('processing', [])
+ .controller("ProcessingController", function(){
+    this.first = 1;
+    this.second = 2;
+    this.listing = [1,2,3,4];
+    this.lookup = {
+      name: "Eric",
+      age: "29",
+      company: "Syncano"
+     };
+
+    this.getFirst = function getFirst(){
+       return this.first; 
+    };
+	
+	this.setFirst = function setFirst(val){
+		this.first = val;
+	};
+	
+   });
+</script>
+</body>
+</html>

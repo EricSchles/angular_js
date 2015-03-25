@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+
+<ul>
+  
+    <p>Name:{{ name }}</p>
+    <p>Email: {{email}}</p>
+ 
+</ul>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+  $http.get("http://localhost:5000/api")
+  .success(function (response) {
+    $scope.name = response["name"];
+    $scope.email = response["email"]});
+});
+</script>
+
+</body>
+</html>
